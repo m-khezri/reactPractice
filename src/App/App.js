@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import myfirstPage from '../components/firstPage';
 import '../App/App.scss';
 import { Button, Icon } from 'react-materialize';
 
@@ -11,6 +12,7 @@ class App extends Component {
           <Icon>thumb_up</Icon>
           Hello React
         </Button>
+        <myfirstPage />
       </div>
     );
   }
