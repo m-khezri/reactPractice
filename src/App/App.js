@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
-import myfirstPage from '../components/firstPage';
 import '../App/App.scss';
-import { Button, Icon } from 'react-materialize';
+import AboutMe from '../components/about/About';
+import NewsApi from '../components/Api/ApiTest';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: 'Mohamamd',
+      lastName: 'Khezri'
+    };
+  }
+
+
   render() {
+
     return (
       <div className="App">
-        <h2 className="blue-text">I'm learning react + Materilize</h2>
-        <Button waves='light'>
-          <Icon>thumb_up</Icon>
-          Hello React
-        </Button>
-        <myfirstPage />
+        <h2 className="blue-text">{this.state.name}</h2>
+        <h3>{this.state.lastName}</h3>
+        <NewsApi />
+        <AboutMe />
       </div>
     );
   }
