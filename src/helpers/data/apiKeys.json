@@ -1,0 +1,14 @@
+{
+  "firebaseKeys": {
+    "apiKey": "AIzaSyBXXx2zknMN2etQFJc2psCbCt5OxDkydKM",
+    "authDomain": "shotz-665d7.firebaseapp.com",
+    "databaseURL": "https://shotz-665d7.firebaseio.com",
+    "projectId": "shotz-665d7",
+    "storageBucket": "shotz-665d7.appspot.com",
+    "messagingSenderId": "580255766694"
+  },
+  "githubApi": {
+    "client_id": "Iv1.729580f387e90d8e",
+    "client_secret": "1bf33ce4e85e7eb807685ee968759fd9a2d05050"
+  }
+}

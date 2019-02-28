@@ -6,5 +6,10 @@
     "projectId": "",
     "storageBucket": "",
     "messagingSenderId": ""
+  },
+    "githubApi": {
+    "client_id": "",
+    "client_secret": "",
   }
+}
 }
