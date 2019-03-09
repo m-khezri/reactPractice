@@ -11,7 +11,6 @@ class NewsApi extends React.Component {
   render() {
     return (
       <div>
-        <h3{profile.name}</h3>
       </div>
     );
   }
