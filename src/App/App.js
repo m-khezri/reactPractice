@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App/App.scss';
 import NewsApi from '../components/Api/ApiTest';
 import getUser from '../helpers/api-data/getUserInfo';
-
+import print from '../components/print/print';
 class App extends Component {
 
   state = {
@@ -23,6 +23,7 @@ class App extends Component {
     return (
       <div>
         <NewsApi profile={this.state.profile} />
+        <print />
       </div>
     );
   }
