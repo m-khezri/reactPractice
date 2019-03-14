@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import '../App/App.scss';
-import NewsApi from '../components/Api/ApiTest';
 import getUser from '../helpers/api-data/getUserInfo';
-import print from '../components/print/print';
+import Print from '../components/print/Print';
 class App extends Component {
 
   state = {
@@ -21,10 +20,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <NewsApi profile={this.state.profile} />
-        <print />
-      </div>
+      <Print profile={this.state.profile} />
     );
   }
 }
