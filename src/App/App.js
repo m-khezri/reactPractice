@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../App/App.scss';
 import getUser from '../helpers/api-data/getUserInfo';
-import Print from '../components/print/Print';
+import NavBar from '../components/NavBar/NavBar';
+import Print from '../components/print/print';
+import About from '../components/About/About';
 class App extends Component {
 
   state = {
@@ -20,7 +23,14 @@ class App extends Component {
 
   render() {
     return (
-      <Print profile={this.state.profile} />
+      <BrowserRouter>
+        <NavBar />
+        <Switch>
+          <Print profile={this.state.profile} />
+          <Route exact path="/" Component={Print} />
+          <Route path="/about" Component={About} />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
