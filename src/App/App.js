@@ -5,10 +5,18 @@ import getUser from '../helpers/api-data/getUserInfo';
 import NavBar from '../components/NavBar/NavBar';
 import Print from '../components/print/print';
 import About from '../components/About/About';
+import UserInput from '../components/Input/UserInput';
+import UserOutput from '../components/Output/UserOutput';
+
 class App extends Component {
 
   state = {
     profile: {},
+    username: 'Zahra',
+  }
+
+  userNameChangeHandler = (e) => {
+    this.setState({ username: e.target.value })
   }
 
   componentDidMount() {
@@ -30,6 +38,8 @@ class App extends Component {
           <Route exact path="/" Component={Print} />
           <Route path="/about" Component={About} />
         </Switch>
+        <UserInput changed={this.userNameChangeHandler} currentName={this.state.username} />
+        <UserOutput userName={this.state.username} />
       </BrowserRouter>
     );
   }
