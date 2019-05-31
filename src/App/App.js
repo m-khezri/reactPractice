@@ -3,9 +3,6 @@ import '../App/App.scss';
 import connection from '../helpers/connection';
 import Auth from '../components/Auth/Auth';
 
-
-
-
 class App extends Component {
 
   componentDidMount() {
