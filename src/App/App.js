@@ -9,7 +9,7 @@ class App extends Component {
         <h2 className="blue-text">I'm learning react + Materilize</h2>
         <Button waves='light'>
           <Icon>thumb_up</Icon>
-          Hello React
+          Google Authentication
         </Button>
       </div>
     );
