@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App/App.scss';
+import firebase from 'firebase/app';
 import connection from '../helpers/connection';
 import Auth from '../components/Auth/Auth';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
@@ -12,16 +13,32 @@ class App extends Component {
 
   componentDidMount() {
     connection();
+    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          authed: true,
+        });
+      } else {
+        this.setState({
+          authed: false,
+        });
+      }
+    });
   }
+
+  componentWillUnmount() {
+    this.removeListener();
+  }
+
   isAuthenticated = () => {
     this.setState({ authed: true });
   }
+
   render() {
     const logoutClickEvent = () => {
       authRequests.logoutUser();
       this.setState({ authed: false });
     };
-
 
     if (!this.state.authed) {
       return (
@@ -34,7 +51,7 @@ class App extends Component {
     return (
       <div className="App">
         <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
-        <h2 className="blue-text">I'm learning react + Materilize</h2>
+
       </div>
     );
   }

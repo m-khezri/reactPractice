@@ -16,12 +16,13 @@ class MyNavbar extends React.Component {
   };
 
   render() {
+    // const monkeyButt = this.props.isAuthed;
+    // const newThing = this.props.newThing;
     const { isAuthed, logoutClickEvent } = this.props;
-
     return (
       <div className="my-navbar">
         <Navbar color="dark" dark expand="md">
-          <NavbarBrand href="/">Google Login</NavbarBrand>
+          <NavbarBrand href="/">Zillone</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
