@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Collapse,
   Navbar,
@@ -29,6 +30,10 @@ class MyNavbar extends React.Component {
               <NavItem>
                 {isAuthed ? <NavLink onClick={logoutClickEvent}>Logout</NavLink> : ''}
               </NavItem>
+              {/* <NavItem>
+                <h1>Hello, {firebase.auth().currentUser.displayName}</h1>
+                <img alt='profile picture' src={firebase.auth().currentUser.photoURL} />
+              </NavItem> */}
             </Nav>
           </Collapse>
         </Navbar>
