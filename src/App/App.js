@@ -52,7 +52,6 @@ class App extends Component {
     return (
       <div className="App">
         <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
-
       </div>
     );
   }
