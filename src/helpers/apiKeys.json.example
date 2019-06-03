@@ -1,0 +1,15 @@
+{
+  "firebaseKeys": {
+    "apiKey": "",
+    "authDomain": "",
+    "databaseURL": "",
+    "projectId": "",
+    "storageBucket": "",
+    "messagingSenderId": ""
+  },
+    "githubApi": {
+    "client_id": "",
+    "client_secret": "",
+  }
+}
+}
