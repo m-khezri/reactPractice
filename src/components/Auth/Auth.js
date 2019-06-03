@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Auth.scss';
 import authRequests from '../../helpers/authRequests';
 
