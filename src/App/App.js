@@ -4,6 +4,7 @@ import firebase from 'firebase/app';
 import connection from '../helpers/connection';
 import Auth from '../components/Auth/Auth';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
+import ArticleForm from '../components/ArticleForm/ArticleForm';
 import authRequests from '../helpers/authRequests';
 
 class App extends Component {
@@ -52,6 +53,7 @@ class App extends Component {
     return (
       <div className="App">
         <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
+        <ArticleForm />
       </div>
     );
   }
