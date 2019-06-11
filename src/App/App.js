@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../App/App.scss';
 import firebase from 'firebase/app';
 import connection from '../helpers/connection';
