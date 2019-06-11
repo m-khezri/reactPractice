@@ -43,6 +43,7 @@ class App extends Component {
     };
 
     if (!this.state.authed) {
+
       return (
         <div className="App">
           <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
@@ -52,7 +53,8 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
+        <MyNavbar isAuthed={this.state.authed} photoURL={this.state.authed} logoutClickEvent={logoutClickEvent} />
+
         <ArticleForm />
       </div>
     );
