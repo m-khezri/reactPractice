@@ -27,7 +27,11 @@ class MyNavbar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                {isAuthed ? <NavLink onClick={logoutClickEvent}>Sign Out</NavLink> : ''}
+                {isAuthed ?
+                  <NavLink onClick={logoutClickEvent}>Sign Out
+                    <img alt="user-pic" src={this.state.photoURL} />
+                  </NavLink>
+                  : ''}
               </NavItem>
             </Nav>
 
