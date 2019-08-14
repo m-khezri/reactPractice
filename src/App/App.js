@@ -1,57 +1,27 @@
-import React, { Component } from 'react';
-import '../App/App.scss';
-import firebase from 'firebase/app';
-import connection from '../helpers/connection';
-import Auth from '../components/Auth/Auth';
-import MyNavbar from '../components/MyNavbar/MyNavbar';
-import ArticleForm from '../components/ArticleForm/ArticleForm';
-import authRequests from '../helpers/authRequests';
+import React from 'react';
+import './App.scss';
+import CarsInput from '../components/CarsInput/CarsInput';
+import getMakes from '../helpers/MakeGetter';
 
-class App extends Component {
+class App extends React.Component {
   state = {
-    authed: false,
+    makes: []
   }
 
   componentDidMount() {
 
-    connection();
-    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({
-          authed: true,
-        });
-      } else {
-        this.setState({
-          authed: false,
-        });
-      }
-    });
-  }
 
-  componentWillUnmount() {
-    this.removeListener();
-  }
+    getMakes.getMakes('makes')
+      .then((result) => {
+        console.log(result);
+        this.setState({ makes: result });
+      })
+      .catch(err => console.log(err));
 
-  isAuthenticated = () => {
-    this.setState({ authed: true });
-  }
-
-  render() {
-    const logoutClickEvent = () => {
-      authRequests.logoutUser();
-      this.setState({ authed: false });
-    };
-
-    if (!this.state.authed) {
-
-      return (
-        <div className="App">
-          <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
-          <Auth isAuthenticated={this.isAuthenticated} />
-        </div>
-      );
-    }
     return (
+      <div>
+        <h1>cars</h1>
+        <CarsInput />
       <div className="App">
         <MyNavbar isAuthed={this.state.authed} photoURL={this.state.authed} logoutClickEvent={logoutClickEvent} />
 
@@ -60,5 +30,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
