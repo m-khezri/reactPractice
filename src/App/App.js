@@ -17,13 +17,15 @@ class App extends React.Component {
         this.setState({ makes: result });
       })
       .catch(err => console.log(err));
-  }
 
-  render() {
     return (
       <div>
         <h1>cars</h1>
         <CarsInput />
+      <div className="App">
+        <MyNavbar isAuthed={this.state.authed} photoURL={this.state.authed} logoutClickEvent={logoutClickEvent} />
+
+        <ArticleForm />
       </div>
     );
   }
